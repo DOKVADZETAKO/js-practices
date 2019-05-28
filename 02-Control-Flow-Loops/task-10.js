@@ -1,12 +1,12 @@
 var arr = [6, 5, 8, 11, 10];
-
-for (i = 0; i < i - 1 ; i++){
-    for( j = 1; j < i; j++){
-        if(arr[i] > arr [j]){
-            arr[i] = arr [j];
-            arr[j] = arr[i];
+var j;
+for (num of arr){
+    for( j = 0; j < arr.length; j++){
+        if(arr[j] < arr [j+1]){
+            temp = arr[j]
+            arr[j] = arr [j+1];
+            arr[j+1] = temp;
         }
     }
 }
 console.log(arr);
-

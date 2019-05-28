@@ -1,4 +1,13 @@
-var arr = [3, 5, 2, 9, 10];
-
-
+var arr = [6, 5, 8, 11, 10];
+var j;
+for (num of arr){
+    for( j = 0; j < arr.length; j++){
+        if(arr[j] > arr [j+1]){
+            temp = arr[j]
+            arr[j] = arr [j+1];
+            arr[j+1] = temp;
+        }
+    }
+}
+console.log(arr);
 
