@@ -1,4 +1,5 @@
-var i,j;
+var i;
+var j;
 
 for (i = 2 ; i <= 10; i++) {
     var prime = true;

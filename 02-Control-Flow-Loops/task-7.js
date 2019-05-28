@@ -1,7 +1,11 @@
 var arr = [1,2,3,4];
 
-for (var i in arr){
-    console.log(arr[i]);
-}
+var a = 0;
 
-```progress```
+for (i of arr){
+    if(!(i % 2 == 0)){
+        a = a + i
+    }
+   
+}
+console.log(a);

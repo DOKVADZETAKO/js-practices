@@ -1,7 +1,7 @@
 var arr = [1,2,3,4];
+var a = 0;
 
-for (var i of arr){
-    console.log(arr[i]);
+for (i of arr){
+    a = a + i
 }
-
-```progress```
+console.log(a);
