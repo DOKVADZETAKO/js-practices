@@ -1,11 +1,11 @@
-f();
-
+let a = 2;
 function f(a){
-   if ( typeof a == 'number'){
-       console.log('this is number');
-       
-   }else{
-    throw new Error('parameter type is not a Number');
-   }
-   
+    if(typeof a != 'number'){
+        throw new Error('parameter type is not a Number');
+    }
+
+    return a ** 3;
+    
 }
+console.log(f(a));
+

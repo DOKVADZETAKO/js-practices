@@ -1,4 +1,4 @@
-var a = 3;
+let a = 3;
 console.log(isEven (a));
 function isEven (a){
     if(typeof a != 'number'){

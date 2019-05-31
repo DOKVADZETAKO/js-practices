@@ -1,12 +1,10 @@
-f(9,3,2);
-f('s',9,3);
-
 function f(a,b,c){
+    let result = 0;
     if(typeof a == 'number' && typeof b == 'number' && typeof c == 'number'){
-        res = (a - b)/c;
+        result = (a - b)/c;
     }else{
             throw new Error('all parameters type should be a Number');
         }
-    
-    console.log(res);
+    return result;
 }
+  console.log(f(9,3,2));
