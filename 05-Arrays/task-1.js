@@ -1,6 +1,6 @@
 const arr = [1,2,3];
 
-var forEach = function(arr, cb ){
+const forEach = function(arr, cb ){
     if(!(Array.isArray(arr))){
         throw new Error ('First parameter required and has to be only array');
     }
@@ -9,7 +9,7 @@ var forEach = function(arr, cb ){
         throw new Error ('Second parameter required and has to be only function');
     }
 
-    for(var count = 0; count < arr.length; count++){
+    for(let count = 0; count < arr.length; count++){
         cb(arr[count], count , arr)
     }
 }

@@ -1,4 +1,4 @@
-var reduce = function(arr, cb, acc){
+const reduce = function(arr, cb, acc){
     if(!(Array.isArray(arr))){
         throw new Error ('First parameter required and has to be only array');
     }
@@ -13,7 +13,7 @@ var reduce = function(arr, cb, acc){
 
     let eachValue = acc;
 
-    for(var count = 0; count < arr.length; count++){
+    for(let count = 0; count < arr.length; count++){
         eachValue = cb(eachValue, arr[count], count , arr);
     }
     return eachValue;
@@ -21,7 +21,7 @@ var reduce = function(arr, cb, acc){
 
 const arr = [1,2,3];
 const acc = 0;
-let check = reduce(arr, function(acc, item, i, arr) {
+const check = reduce(arr, function(acc, item, i, arr) {
     return item + acc;
 }, acc);
 

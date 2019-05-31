@@ -1,6 +1,4 @@
-
-
-var filter = function(arr, cb){
+const filter = function(arr, cb){
     if(!(Array.isArray(arr))){
         throw new Error ('First parameter required and has to be only array');
     }
@@ -10,7 +8,7 @@ var filter = function(arr, cb){
     }
 
     let filtered = [];
-    for(var count = 0; count < arr.length; count++){
+    for(let count = 0; count < arr.length; count++){
         const old = arr[count];
         const xd = cb(old, count , arr);
         if(xd){
@@ -22,7 +20,8 @@ var filter = function(arr, cb){
 }
 
 const arr = [1,2,3];
-let filtered = filter(arr, function(item, i, arr) {
+
+const filtered = filter(arr, function(item, i, arr) {
     return item > 1;
 });
 

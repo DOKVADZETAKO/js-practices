@@ -1,4 +1,4 @@
-var every = function(arr, cb){
+const every = function(arr, cb){
     if(!(Array.isArray(arr))){
         throw new Error ('First parameter required and has to be only array');
     }
@@ -8,7 +8,7 @@ var every = function(arr, cb){
     }
 
     let eachValue = false;
-    for(var count = 0; count < arr.length; count++){
+    for(let count = 0; count < arr.length; count++){
         eachValue = cb(arr[count], count , arr);
         if(!eachValue){
             break;
@@ -19,7 +19,7 @@ var every = function(arr, cb){
 
 const arr = [1,2,3];
 
-let check = every(arr, function(item, i, arr) {
+const check = every(arr, function(item, i, arr) {
     return item > 1;
 });
 

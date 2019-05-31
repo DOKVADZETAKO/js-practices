@@ -1,4 +1,4 @@
-var reverse = function(arr){
+const reverse = function(arr){
     if(!(Array.isArray(arr))){
         throw new Error ('First parameter required and has to be only array');
     }
@@ -17,5 +17,5 @@ var reverse = function(arr){
 
 const arr = [3,2,1];
 
-let check = reverse(arr);
+const check = reverse(arr);
 console.log(check);

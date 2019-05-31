@@ -1,4 +1,4 @@
-var reduceRight = function(arr, cb, acc){
+const reduceRight = function(arr, cb, acc){
     if(!(Array.isArray(arr))){
         throw new Error ('First parameter required and has to be only array');
     }
@@ -13,16 +13,17 @@ var reduceRight = function(arr, cb, acc){
 
     let eachValue = acc;
 
-    for(var count = 0; count > arr.length; count++){
-        eachValue = cb(eachValue, arr[count], count , arr);
+    for (let i = arr.length - 1; i >= 0; i--){
+        eachValue = cb(eachValue, arr[i], i , arr);
     }
     return eachValue;
 }
 
 const arr = [1,2,3];
 const acc = 0;
-let check = reduceRight(arr, function(acc, item, i, arr) {
+const check = reduceRight(arr, function(acc, item, i, arr) {
     return item + acc;
 }, acc);
 
-console.log(check); ``` need check```
+console.log(check);
+
