@@ -1,21 +1,28 @@
-let person = {
+const person = {
     salary: null,
     rate: null,
 }
-Object.defineProperty(person, 'salaryRate', {
-    get salary() {
-        
+Object.defineProperties(person, {
+    rate: {
+        value: 0,
+        writable: true,
+        configurable: false,
+        enumerable: false,
     },
-    set(value) {
-        var splitted = value.split(' ');
-        this.salary = splitted[0];
-        this.rate = splitted[1];
-    },
+
+    salary: {
+        get(){
+            const date = new Date();
+            const day = date.getDate();
+            return day * this.rate;
+        },
+        set(){
+            throw new Error('can\'t use') 
+        }
+    }
+   
+
 });
 
 person.rate = 30
-person.salaryRate = '30';
-
-console.log(person.salaryRate);
 console.log(person.salary);
-console.log(person.rate);
