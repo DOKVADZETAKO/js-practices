@@ -1,17 +1,19 @@
-let person = {
-    get salary(){
-        let date = new Date();
-        let nextMonth = new Date();
-        nextMonth.setMonth(date.getMonth(+1));
-        nextMonth.setDate(1)
-        let today = (nextMonth - date) / 8.64e7;
-        if(today < 10){
-            return 'good salary'
-        }else{
-            return 'bad salary'
-        }
-    }
+const person = {
+    salary: 1000
 }
+
+Object.defineProperty(person, 'salary', {
+    get(){
+    let today = new Date();
+      let month = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+      if (today.getDate() < (month - 20)) {
+          return 'Good salary';
+      } else {
+          return 'Bad salary';
+      }
+  },
+});
+
 
 console.log(person.salary)
 
