@@ -8,12 +8,13 @@ function upperCaseFirst(str) {
         fitstlatter = fitstlatter.toUpperCase();
         let other = str.substring(1);
         let result = fitstlatter + other;
-        console.log(result);
         return result;
     }  
 }
 
-upperCaseFirst('pitter');
+console.log(upperCaseFirst('pitter'));
+
+
 
 
 
