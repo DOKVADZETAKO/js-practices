@@ -21,21 +21,24 @@ function CoffeeMachine(power, capacity) {
     }
 
     this.run = function () {
+        this.a = 0;
         setTimeout(onReady, getTimeToBoil());
+        this.a = 1;
     };
 
-    this.isRunning() = function (amount) {
-        if (amount <= 0) {
-            throw new Error("Value has to be positive");
-        }
+    this.setOnReady = function (func) {
+        return func();
+    }
 
-        if (amount >= 400) {
-            throw new Error("You can't put more water, than 400 ");
+    this.isRunning = function () {
+        if (this.a == 1) {
+            this.a = 0;
+            return true
+        }else{
+            return false;
         }
-        waterAmount = amount;
     }
 }
-
 
 var coffeeMachine = new CoffeeMachine(20000, 500);
 coffeeMachine.setWaterAmount(100);
@@ -44,8 +47,8 @@ console.log('Before: ' + coffeeMachine.isRunning()); // Before: false
 
 coffeeMachine.run();
 
-// console.log('In progress: ' + coffeeMachine.isRunning()); // In progress: true
+console.log('In progress: ' + coffeeMachine.isRunning()); // In progress: true
 
-// coffeeMachine.setOnReady(function() {
-// 	console.log('After: ' + coffeeMachine.isRunning()); // After: false
-// });
+coffeeMachine.setOnReady(function() {
+	console.log('After: ' + coffeeMachine.isRunning()); // After: false
+});

@@ -1,5 +1,7 @@
 function CoffeeMachine(power, capacity) {
-
+  this.get = function() {
+    return power
+}
   this.setWaterAmount = function (amount) {
     if (amount < 0) {
       throw new Error("Value has to be positive.");
@@ -13,12 +15,7 @@ function CoffeeMachine(power, capacity) {
   this.getWaterAmount = function () {
     return waterAmount;
   };
-  Object.defineProperty(this, 'power', {
-    get() {
-      return power
-    }
-  })
 }
+const coffeeMachine = new CoffeeMachine(1000, 500);
+console.log(coffeeMachine.get())
 
-cm = new CoffeeMachine(1000, 1000)
-console.log(cm.power)
