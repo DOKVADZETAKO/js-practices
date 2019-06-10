@@ -37,7 +37,7 @@ class Worker {
 }
 
 
-var worker = new Worker('John', 'Smith', 10, 31);
+const worker = new Worker('John', 'Smith', 10, 31);
 
 console.log(worker.getRate()); // print 10
 console.log(worker.getDays()); // print 31
